@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homies Hired</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            background-image: linear-gradient(to bottom right, rgb(184, 118, 216), rgb(134, 32, 207));
+        }
+        .btn-pill {
+            margin: 5px;
+            border-radius: 20px;
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #000;
+            border: 2px solid #ddd;
+            cursor: pointer;
+        }
+
+        .btn-pill.active {
+            background-color: #007bff;
+            color: #fff;
+            border-color: #007bff;
+        }
+
+        .btn-pill:hover {
+            background-color: #e9ecef;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #recommendations {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+<form id="freelance-form">
+    <div class="form-group">
+        <label for="exp">Experienced in Freelancing</label>
+        <select class="form-control" id="exp" name="exp" required>
+            <option value="yes">I already have experience in freelancing</option>
+            <option value="no">No, this is my first time!</option>
+        </select>
+    </div>
+    <button type="submit">Submit</button>
+</form>
+
+<div id="interest-form" style="display: none;">
+    <form id="interest-form-inner">
+        <div class="form-group">
+            <label for="interest">What activities are you interested in?</label>
+            <div class="btn-group" role="group" aria-label="Interest Selection">
+                <button type="button" class="btn btn-pill" data-value="logo-designing">Logo Designing</button>
+                <button type="button" class="btn btn-pill" data-value="content-writing">Content Writing</button>
+                <button type="button" class="btn btn-pill" data-value="digital-marketing">Digital Marketing</button>
+                <button type="button" class="btn btn-pill" data-value="comic-writing">Comic Writing</button>
+                <button type="button" class="btn btn-pill" data-value="ui-ux">UI-UX</button>
+                <button type="button" class="btn btn-pill" data-value="photography">Photography</button>
+                <button type="button" class="btn btn-pill" data-value="copywriter">Copywriter</button>
+                <button type="button" class="btn btn-pill" data-value="online-tutoring">Online Tutoring</button>
+            </div>
+            <input type="hidden" id="selected-interests" name="interests">
+        </div>
+        <button type="submit">Get Recommendations</button>
+    </form>
+    <div id="recommendations"></div>
+</div>
+
+<footer class="bg-dark text-white text-center py-4">
+    <p>&copy; 2024 Homies Hired. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
